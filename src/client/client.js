@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
+/* global document */
+
 ReactDOM.render(
   <App />,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

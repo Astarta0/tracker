@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/forbid-prop-types": ["error", { "forbid": ["array", "object"], "checkContextTypes": true, "checkChildContextTypes": true }],
+    "react/destructuring-assignment": ["warn", "always", { "ignoreClassFields": true }],
+    "react/prop-types": ["error"],
+    "react/no-array-index-key": ["warn"],
+    "react/self-closing-comp": ["warn", {
+      "component": true,
+      "html": true
+    }],
+    "react/jsx-handler-names": ["error"],
+    "react/jsx-filename-extension": ["off"],
+    "react/prefer-stateless-function": ["warn"]
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb"
+  ]
+}
