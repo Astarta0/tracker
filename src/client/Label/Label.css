@@ -1,0 +1,25 @@
+.label {
+    display: inline-block;
+    text-align: left;
+    padding: 4px 12px;
+    border-radius: 3px;
+    color: var(--white-color);
+
+    &_active {
+        background-color: var(--active-label);
+    }
+
+    &_in-review {
+        background-color: var(--gray-text-color);
+    }
+
+    &_closed {
+        background-color: var(--border-color);
+        color: var(--gray-text-color);
+    }
+
+    &_deffered {
+        background-color: var(--deffered-label);
+        color: var(--common-background-color);
+    }
+}

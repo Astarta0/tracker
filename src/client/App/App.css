@@ -1,6 +1,37 @@
 @import '~normalize.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 
-h1 {
-    color: #27aedb;
-    text-align: center;
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: var(--common-background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+button:focus{
+    outline: none;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --border-color: #D3D9DE;
+    --gray-text-color: #414A64;
+    --common-background-color: #F5F6FA;
+    --white-color: #FFFFFF;
+
+    --active-label: #65AE4A;
+    --closed-label: #E7ECEF;
+    --deffered-label: #99b3a9;
 }

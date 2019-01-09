@@ -1,14 +1,16 @@
-const path = require("path");
+const path = require('path');
 const postcssPresetEnv = require('postcss-preset-env');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const postcssNested = require('postcss-nested');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   // Определим точку входа и выходной каталог приложения
-  entry: "./src/client/client.js",
+  entry: './src/client/client.js',
   output: {
-    path: path.join(__dirname, "/dist"),
-    filename: "client-bundle.js"
+    path: path.join(__dirname, '/dist'),
+    filename: 'client-bundle.js'
   },
   // Добавим loaders, которые будут ответственны за загрузку и объединение исходных файлов
   // Webpack выполняет loaders в обратном порядке: с последнего до первого, то есть справа налево
@@ -17,9 +19,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        },
+        use: { loader: 'babel-loader' },
       },
       {
         test: /\.js$/,
@@ -31,15 +31,17 @@ module.exports = {
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { importLoaders: 1 } },
-          { loader: 'postcss-loader',
+          {
+            loader: 'postcss-loader',
             options: {
               ident: 'postcss',
               plugins: () => [
                 postcssPresetEnv({
                   stage: 0,
-                  browsers: "last 2 years",
+                  browsers: 'last 2 years',
                   autoprefixer: true
-                })
+                }),
+                postcssNested()
               ]
             }
           }

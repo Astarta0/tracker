@@ -26,7 +26,20 @@
     }],
     "react/jsx-handler-names": ["error"],
     "react/jsx-filename-extension": ["off"],
-    "react/prefer-stateless-function": ["warn"]
+    "react/prefer-stateless-function": ["warn"],
+    "comma-dangle": ["off"],
+    "quote-props:": ["off", "consistent-as-needed"],
+    "no-use-before-define": ["off"],
+    "no-unused-vars": ["warn"],
+    "arrow-parens": ["error", "as-needed"],
+    "object-curly-newline": ["warn", {
+      "ObjectExpression": { "multiline": true, "minProperties": 8},
+      "ObjectPattern": { "multiline": true, "minProperties": 8 },
+      "ImportDeclaration": { "multiline": true, "minProperties": 5 },
+      "ExportDeclaration": { "multiline": true, "minProperties": 5 }
+      }
+    ],
+    "arrow-body-style": ["warn", "as-needed", { "requireReturnForObjectLiteral": true }]
   },
   "extends": [
     "eslint:recommended",
