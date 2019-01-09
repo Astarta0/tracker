@@ -1,11 +1,7 @@
-import { oneLineTrim } from 'common-tags';
-import * as faker from 'faker';
+const { oneLineTrim } = require('common-tags');
+const faker = require('faker');
 
-const DAY_DURATION = 86400000;
-const TASKS_COUNT = 10;
-
-const STATUSES = ['CLOSED', 'ACTIVE', 'IN REVIEW', 'DEFFERED'];
-const T_HEADS = ['STARTED', 'ENDED', 'DAYS', 'TASK NAME', 'STATUS'];
+const { STATUSES, DAY_DURATION, TASKS_COUNT } = require('../../constants');
 
 function getTimeString(data) {
   const day = data.getDate();
@@ -51,4 +47,4 @@ const TASKS = [...Array(TASKS_COUNT).keys()].map((v, i) => {
   };
 });
 
-export { TASKS, T_HEADS };
+module.exports = TASKS;

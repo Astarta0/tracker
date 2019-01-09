@@ -1,0 +1,11 @@
+const DAY_DURATION = 86400000;
+const TASKS_COUNT = 10;
+const STATUSES = ['CLOSED', 'ACTIVE', 'IN REVIEW', 'DEFFERED'];
+const T_HEADS = ['STARTED', 'ENDED', 'DAYS', 'TASK NAME', 'STATUS'];
+
+module.exports = {
+  DAY_DURATION,
+  TASKS_COUNT,
+  STATUSES,
+  T_HEADS
+};

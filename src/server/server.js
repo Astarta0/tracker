@@ -1,7 +1,9 @@
 const express = require('express');
+const path = require('path');
+
+const TASKS = require('./data-stub/tasks-table');
 
 const app = express();
-const path = require('path');
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(`${__dirname}/../../index.html`));
@@ -9,6 +11,14 @@ app.get('/', (req, res) => {
 
 app.get('/dist/client-bundle.js', (req, res) => {
   res.sendFile(path.join(`${__dirname}/../../dist/client-bundle.js`));
+});
+
+app.get('/api/tasks', (req, res) => {
+  res.json(TASKS);
+});
+
+app.delete('/api/tasks/:id', (req, res) => {
+  res.json(TASKS);
 });
 
 app.listen(3000, () => {
