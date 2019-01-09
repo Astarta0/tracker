@@ -34,6 +34,10 @@ function getRandomStatus(i) {
   return STATUSES[Math.round((i + getRandomArbitrary(0, 10))) % STATUSES.length];
 }
 
+function getNewId(tasks) {
+  return tasks.length;
+}
+
 const TASKS = [...Array(TASKS_COUNT).keys()].map((v, i) => {
   const { started, ended, days } = getTaskDuration(i);
 
@@ -47,4 +51,7 @@ const TASKS = [...Array(TASKS_COUNT).keys()].map((v, i) => {
   };
 });
 
-module.exports = TASKS;
+module.exports = {
+  TASKS,
+  getNewId
+};
