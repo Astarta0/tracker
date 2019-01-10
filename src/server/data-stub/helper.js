@@ -49,7 +49,12 @@ const TASKS = [...Array(TASKS_COUNT).keys()].map((v, i) => {
     name: `${faker.company.bs()}\u00A0${i}`,
     status: getRandomStatus(i)
   };
-});
+}).map(t => (
+  {
+    ...t,
+    ended: t.status === 'ACTIVE' ? null : t.ended
+  }
+));
 
 module.exports = {
   TASKS,

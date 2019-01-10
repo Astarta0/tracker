@@ -39,7 +39,11 @@
       "ExportDeclaration": { "multiline": true, "minProperties": 5 }
       }
     ],
-    "arrow-body-style": ["warn", "as-needed", { "requireReturnForObjectLiteral": true }]
+    "arrow-body-style": ["warn", "as-needed", { "requireReturnForObjectLiteral": false }],
+    "prefer-const": ["error", {
+      "destructuring": "all",
+      "ignoreReadBeforeAssign": true
+    }]
   },
   "extends": [
     "eslint:recommended",

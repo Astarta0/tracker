@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import { T_HEADS, TASKS } from '../../server/data-stub/tasks-table';
+import * as tasksList from '../../server/data-stub/tasks-list';
+import { T_HEADS } from '../../constants';
 import Label from '../Label';
 import './Tasks-table.css';
 
@@ -18,7 +19,7 @@ class TasksTable extends Component {
           </tr>
         </thead>
         <tbody className="tasks-table__tbody">
-          {TASKS.map(task => {
+          {tasksList.getTasks().map(task => {
             const { id, started, ended, days, name, status } = task;
 
             return (
