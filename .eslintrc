@@ -16,7 +16,7 @@
     "react"
   ],
   "rules": {
-    "react/forbid-prop-types": ["error", { "forbid": ["array", "object"], "checkContextTypes": true, "checkChildContextTypes": true }],
+    "react/forbid-prop-types": ["error", { "forbid": ["object"], "checkContextTypes": true, "checkChildContextTypes": true }],
     "react/destructuring-assignment": ["warn", "always", { "ignoreClassFields": true }],
     "react/prop-types": ["error"],
     "react/no-array-index-key": ["warn"],
@@ -24,6 +24,7 @@
       "component": true,
       "html": true
     }],
+    "react/no-unused-prop-types": ["warn"],
     "react/jsx-handler-names": ["error"],
     "react/jsx-filename-extension": ["off"],
     "react/prefer-stateless-function": ["warn"],
@@ -31,8 +32,9 @@
     "quote-props:": ["off", "consistent-as-needed"],
     "no-use-before-define": ["off"],
     "no-unused-vars": ["warn"],
+    "no-nested-ternary": ["warn"],
     "arrow-parens": ["error", "as-needed"],
-    "object-curly-newline": ["warn", {
+    "object-curly-newline": ["off", {
       "ObjectExpression": { "multiline": true, "minProperties": 8},
       "ObjectPattern": { "multiline": true, "minProperties": 8 },
       "ImportDeclaration": { "multiline": true, "minProperties": 5 },

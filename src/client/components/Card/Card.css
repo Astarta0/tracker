@@ -15,12 +15,36 @@
         align-items: center;
     }
 
-    &__header-title{
+    &__header-title {
         color: var(--gray-text-color);
+    }
+
+    &__content-wrapper {
+        min-height: 518px;
+
+        &_alignment_true {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     &__pagination {
         margin: auto;
+    }
+
+    &__loader {
+        width: fit-content;
+        line-height: 28px;
+        padding: 0 6px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    &__error {
+        width: fit-content;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 6px;
     }
 }
 

@@ -5,7 +5,7 @@ import './Pagination.css';
 class Pagination extends Component {
   render() {
     return (
-      <div className="card__pagination pagination">pagination</div>
+      <div className="card__pagination pagination">Pagination will be there...</div>
     );
   }
 }

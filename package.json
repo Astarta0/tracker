@@ -20,14 +20,21 @@
     "url": "https://github.com/Astarta0/tracker/issues"
   },
   "homepage": "https://github.com/Astarta0/tracker#readme",
+  "browserslist": [
+    "last 3 Chrome versions"
+  ],
   "dependencies": {
+    "axios": "^0.18.0",
     "common-tags": "^1.8.0",
     "express": "^4.16.4",
     "faker": "^4.1.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -52,6 +59,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.1.1",
     "postcss-preset-env": "^6.5.0",
+    "redux-devtools": "^3.5.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2"

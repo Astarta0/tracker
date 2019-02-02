@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import * as tasksList from '../../server/data-stub/tasks-list';
-import { T_HEADS } from '../../constants';
+import { fetchTasks } from '../../actions/tasks-actions';
+import { T_HEADS } from '../../../constants';
 import Label from '../Label';
 import './Tasks-table.css';
 
 class TasksTable extends Component {
+
   render() {
+    const { tasks } = this.props;
+
     return (
       <table className="tasks-table">
         <thead>
@@ -19,7 +24,7 @@ class TasksTable extends Component {
           </tr>
         </thead>
         <tbody className="tasks-table__tbody">
-          {tasksList.getTasks().map(task => {
+          {tasks.map(task => {
             const { id, started, ended, days, name, status } = task;
 
             return (
@@ -38,4 +43,12 @@ class TasksTable extends Component {
   }
 }
 
-export default TasksTable;
+TasksTable.propTypes = {
+  tasks: PropTypes.array.isRequired,
+};
+
+const mapStateToProps = state => ({
+  tasks: state.tasks.tasks
+});
+
+export default connect(mapStateToProps)(TasksTable);
