@@ -9,7 +9,6 @@ import join from '../../../utils/utils';
 import './Card.css';
 
 class Card extends Component {
-
   componentDidMount() {
     this.props.fetchTasks();
   }

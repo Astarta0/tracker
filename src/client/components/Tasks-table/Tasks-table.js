@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { fetchTasks } from '../../actions/tasks-actions';
 import { T_HEADS } from '../../../constants';
 import Label from '../Label';
 import './Tasks-table.css';
 
 class TasksTable extends Component {
-
   render() {
     const { tasks } = this.props;
 

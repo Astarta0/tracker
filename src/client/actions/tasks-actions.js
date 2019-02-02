@@ -15,14 +15,11 @@ export function fetchTasks() {
         type: TYPE.FETCH_TASKS_SUCCESS,
         payload: { tasks }
       });
-
     } catch (error) {
-
       dispatch({
         type: TYPE.FETCH_TASKS_FAILED,
         payload: { error: error.message }
       });
-
     }
   };
 }

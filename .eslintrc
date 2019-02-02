@@ -28,6 +28,7 @@
     "react/jsx-handler-names": ["error"],
     "react/jsx-filename-extension": ["off"],
     "react/prefer-stateless-function": ["warn"],
+    "react/require-default-props": ["off"],
     "comma-dangle": ["off"],
     "quote-props:": ["off", "consistent-as-needed"],
     "no-use-before-define": ["off"],
@@ -45,7 +46,8 @@
     "prefer-const": ["error", {
       "destructuring": "all",
       "ignoreReadBeforeAssign": true
-    }]
+    }],
+    "import/prefer-default-export": ["off"]
   },
   "extends": [
     "eslint:recommended",
