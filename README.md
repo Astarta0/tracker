@@ -1,6 +1,6 @@
 # tracker
 
-За основу взят дизайн https://dribbble.com/shots/5355785-Filtering-table-data
+За основу взят дизайн https://dribbble.com/shots/5355785-Filtering-table-data (no-responsive version).
 
 Запуск сервера в режиме локальной разработки
 `npm run start:dev`
