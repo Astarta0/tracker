@@ -12,10 +12,10 @@ const enhancer = composeEnhancers(
   applyMiddleware(thunk)
 );
 
-export default function configureStore() {
+export default function configureStore(preloadedState) {
   return createStore(
     rootReducer,
-    undefined,
+    preloadedState,
     enhancer
   );
 }

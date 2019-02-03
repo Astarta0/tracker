@@ -1,15 +1,22 @@
+/* eslint-disable no-underscore-dangle */
+/* global document, window */
+
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 
 import configureStore from './store/configure-store';
 import App from './components/App';
 
-/* global document */
+// Grab the state from a global variable injected into the server-generated HTML
+const preloadedState = window.__PRELOADED_STATE__;
 
-const store = configureStore();
+// Allow the passed state to be garbage-collected
+delete window.__PRELOADED_STATE__;
 
-ReactDOM.render(
+const store = configureStore(preloadedState);
+
+hydrate(
   <Provider store={store}>
     <App />
   </Provider>,
