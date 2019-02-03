@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import join from '../../../utils/utils';
+import classNames from 'classnames';
 
 import './Label.css';
 
@@ -16,7 +15,7 @@ const Label = props => {
   const { status } = props;
 
   return (
-    <div className={join('label', statusMap[status])}>{props.status}</div>
+    <div className={classNames('label', statusMap[status])}>{props.status}</div>
   );
 };
 

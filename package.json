@@ -27,6 +27,7 @@
     "@babel/register": "^7.0.0",
     "axios": "^0.18.0",
     "babel-plugin-css-modules-transform": "^1.6.2",
+    "classnames": "^2.2.6",
     "common-tags": "^1.8.0",
     "express": "^4.16.4",
     "faker": "^4.1.0",

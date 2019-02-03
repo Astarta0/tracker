@@ -4,9 +4,14 @@ import PropTypes from 'prop-types';
 
 import { T_HEADS } from '../../../constants';
 import Label from '../Label';
-import './Tasks-table.css';
+import './TasksTable.css';
 
-class TasksTable extends Component {
+@connect(
+  state => ({
+    tasks: state.tasks.tasks
+  })
+)
+export default class TasksTable extends Component {
   render() {
     const { tasks } = this.props;
 
@@ -44,9 +49,3 @@ class TasksTable extends Component {
 TasksTable.propTypes = {
   tasks: PropTypes.array.isRequired,
 };
-
-const mapStateToProps = state => ({
-  tasks: state.tasks.tasks
-});
-
-export default connect(mapStateToProps)(TasksTable);

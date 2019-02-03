@@ -5,7 +5,7 @@ import React from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 
-import configureStore from './store/configure-store';
+import configureStore from '../store/configureStore';
 import App from './components/App';
 
 // Grab the state from a global variable injected into the server-generated HTML

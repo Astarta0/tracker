@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { fetchTasks } from '../../actions/tasks-actions';
-import TasksTable from '../Tasks-table';
+import { fetchTasks } from '../../actions/tasks';
+import TasksTable from '../TasksTable';
 import Pagination from '../Pagination';
-import join from '../../../utils/utils';
 import './Card.css';
 
-class Card extends Component {
+@connect(state => {
+  const { isLoading, error, tasks } = state.tasks;
+
+  return {
+    isLoading,
+    error,
+    tasks
+  };
+},
+{
+  fetchTasks
+})
+
+
+export default class Card extends Component {
   componentDidMount() {
     this.props.fetchTasks();
   }
@@ -30,16 +44,18 @@ class Card extends Component {
             Status
           </button>
         </div>
-        <div className={join('card__content-wrapper', `card__content-wrapper_alignment_${isLoading || Boolean(error)}`)}>
-          { error ? (
+        <div className={classNames('card__content-wrapper', { 'card__content-wrapper_alignment': isLoading || Boolean(error) })}>
+          { error && (
             <div className="card__error">
               <span role="img" aria-label="cat" style={{ fontSize: '22px' }}> 😿 </span>
               {error}
             </div>
-          )
-            : (isLoading || !tasks
-              ? (<div className="card__loader">Loading ...</div>)
-              : <TasksTable />) }
+          ) }
+
+          { isLoading || !tasks
+            ? (<div className="card__loader">Loading ...</div>)
+            : <TasksTable />
+          }
         </div>
         <Pagination />
       </div>
@@ -54,19 +70,3 @@ Card.propTypes = {
 
   fetchTasks: PropTypes.func.isRequired
 };
-
-const mapDispatchToProps = {
-  fetchTasks
-};
-
-const mapStateToProps = state => {
-  const { isLoading, error, tasks } = state.tasks;
-
-  return {
-    isLoading,
-    error,
-    tasks
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
